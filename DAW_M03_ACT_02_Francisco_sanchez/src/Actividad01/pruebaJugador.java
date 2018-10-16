@@ -22,7 +22,7 @@ public class pruebaJugador {
         System.out.println(p1.toString() + d1.toString() + dl1.toString());
 
         // actualizamos
-        System.out.println("\nActualizamos en 3 las paradas, recuperciones y goles."
+        System.out.println("\nActualizamos en 3 las paradas, recuperaciones y goles."
                 + "\nTambien actualizamos dorsal del portero, equipo del defensa y"
                 + " nombre del delantero.");
 
