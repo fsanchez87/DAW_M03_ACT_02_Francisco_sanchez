@@ -14,10 +14,6 @@ public class pruebaJugador {
         
         Portero p1 = new Portero("iker", 1, "Rmadrid", 3);
         
-        System.out.println(p1.toString());;
-        p1.setParadas(10);
-        System.out.println(p1.getParadasTotales());;
-
-        
+        System.out.println(p1.toString());        
     }
 }

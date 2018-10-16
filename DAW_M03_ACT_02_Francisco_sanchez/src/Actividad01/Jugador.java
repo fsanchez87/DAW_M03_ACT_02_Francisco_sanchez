@@ -26,9 +26,9 @@ package Actividad01;
 public abstract class Jugador {
     
     // atributos
-    String nombre;
-    int dorsal;
-    String equipo;
+    protected String nombre;
+    protected int dorsal;
+    protected String equipo;
     
     // construtor
     public Jugador(String nombre, int dorsal, String equipo) {

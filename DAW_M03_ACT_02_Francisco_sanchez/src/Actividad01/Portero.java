@@ -13,7 +13,7 @@ public class Portero extends Jugador{
     
     // atributos de la clase
     private static int paradasTotales = 0; // varible estática para almacenar
-    private static String posicion = "Portero";
+    private static final String posicion = "Portero";
     
     // atributos de instancia
     private int paradas = 0;
@@ -22,7 +22,7 @@ public class Portero extends Jugador{
     public Portero(String nombre, int dorsal, String equipo, int paradas) {
         super(nombre, dorsal, equipo);
         this.paradas = paradas; 
-        this.paradasTotales += paradas;
+        Portero.paradasTotales += paradas;
     }
     
     // getter y setter    
@@ -33,7 +33,7 @@ public class Portero extends Jugador{
     
     // métodos de la clase
     public int getParadasTotales(){
-        return this.paradasTotales;
+        return Portero.paradasTotales;
     }
 
     @Override
@@ -41,7 +41,8 @@ public class Portero extends Jugador{
         String cadena = "\nNombre: " + this.nombre;
         cadena += "\nDorsal: " + this.dorsal;
         cadena += "\nEquipo: " + this.equipo;
-        cadena += "\nParadas totales: " + this.paradasTotales;        
+        cadena += "\nPosicioón: " + Portero.posicion;
+        cadena += "\nParadas totales: " + Portero.paradasTotales;        
         cadena += "\n------------------------------------------\n\n";
 
         return cadena; 
