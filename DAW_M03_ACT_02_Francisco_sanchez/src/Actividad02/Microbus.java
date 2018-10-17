@@ -9,33 +9,32 @@ package Actividad02;
  *
  * @author fsanchez
  */
-public class Microbus extends Coche{
-    
-    //atributos
-    private static double suplementoAlquilerMicrobus = 2;
-    
-    public Microbus(String matricula, int diasAlquiler, int numeroPlazas) {
-        super(matricula, diasAlquiler, numeroPlazas);
-    }
-    
-    // metodos
+public class Microbus extends Coche {
 
+    //atributos
+    private String tipoVehiculo = "Microbus";
+    private static final double suplementoAlquilerMicrobus = 2;
+
+    public Microbus(String matricula, String tipoVehiculo, int numeroPlazas) {
+        super(matricula, tipoVehiculo, numeroPlazas);
+    }
+
+    // metodos
     public double costeAlquilerMicrobus() {
         double costeAlquilerMicrobus;
         costeAlquilerMicrobus = alquilerBase() + (getNumeroPlazas() * suplementoAlquilerMicrobus);
         return costeAlquilerMicrobus;
     }
-    
+
     public String toString() {
         String cadena = "\nMatricula: " + this.matricula;
+        cadena += "\nTipo de vehículo: " + this.tipoVehiculo;
         cadena += "\nDias de alquiler: " + this.diasAlquiler;
         cadena += "\nNúmero de plazas: " + this.numeroPlazas;
         cadena += "\nCoste del alquiler: " + costeAlquilerMicrobus() + "€";
-        cadena += "\n------------------------------------------\n\n";
+        cadena += "\n------------------------------------------\n";
 
         return cadena;
     }
-    
-    
-    
+
 }

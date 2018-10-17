@@ -9,45 +9,49 @@ package Actividad02;
  *
  * @author fsanchez
  */
-class Coche extends Vehiculo{
-    
+class Coche extends Vehiculo {
+
     // atributos
-    private static final String tipoVehiculo = "Coche";
+    public String tipoVehiculo = "Coche";
     private static final double suplementoAlquilerCoche = 1.5;
     protected int numeroPlazas;
 
-    public Coche(String matricula, int diasAlquiler, int numeroPlazas) {
-        super(matricula, diasAlquiler);
+    public Coche(String matricula, String tipoVehiculo, int numeroPlazas) {
+        super(matricula, tipoVehiculo);
         this.numeroPlazas = numeroPlazas;
     }
-    
+
     //getter y setter
-    int getNumeroPlazas(){
+    int getNumeroPlazas() {
         return this.numeroPlazas;
     }
-    
-    void setNumeroPlazas(int numeroPlazas){
+
+    void setNumeroPlazas(int numeroPlazas) {
         this.numeroPlazas = numeroPlazas;
+    }
+    
+    void setTipoVehiculo(String tipoVehiculo){
+        this.tipoVehiculo = tipoVehiculo;
     }
     
     //métodos
-    public double costeAlquilerCoche(){
+    public double costeAlquilerCoche() {
         double costeAlquilarcoche;
-        costeAlquilarcoche = alquilerBase() + (getNumeroPlazas()*suplementoAlquilerCoche);
+        costeAlquilarcoche = alquilerBase() + (getNumeroPlazas() * suplementoAlquilerCoche);
         return costeAlquilarcoche;
-        
+
     }
+
     @Override
     public String toString() {
-        String cadena = "\nMatricula: " + Coche.matricula;
+        String cadena = "\nMatricula: " + this.matricula;
+        cadena += "\nTipo de vehículo: " + this.tipoVehiculo;
         cadena += "\nDias de alquiler: " + this.diasAlquiler;
         cadena += "\nNúmero de plazas: " + this.numeroPlazas;
         cadena += "\nCoste del alquiler: " + costeAlquilerCoche() + "€";
-        cadena += "\n------------------------------------------\n\n";
+        cadena += "\n------------------------------------------\n";
 
         return cadena;
-    }    
-    
-    
-    
+    }
+
 }
