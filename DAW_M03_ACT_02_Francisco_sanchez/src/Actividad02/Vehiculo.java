@@ -12,23 +12,33 @@ package Actividad02;
 public abstract class Vehiculo {
 
     //atributos
-    protected static String matricula = "0000XXXX";
+    protected String tipoVehiculo = "Vehículo";
+    protected String matricula = "0000XXXX";
     protected static int precioBase = 50;
     protected int diasAlquiler = 0;
 
     //constructor
-    public Vehiculo(String matricula, int diasAlquiler) {
-        Vehiculo.matricula = matricula;
+    public Vehiculo(String matricula, String tipoVehiculo) {
+        this.matricula = matricula;
+        this.tipoVehiculo = tipoVehiculo;
         this.diasAlquiler = diasAlquiler;
     }
 
     // getter y setter
+    String getTipoVehiculo() {
+        return this.tipoVehiculo;
+    }
+
+    void setTipoVehiculo(String tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
+    }
+
     String getMatricula() {
-        return Vehiculo.matricula;
+        return this.matricula;
     }
 
     void setMatricula(String matricula) {
-        Vehiculo.matricula = matricula;
+        this.matricula = matricula;
     }
 
     int getDiasAlquiler() {
@@ -38,25 +48,20 @@ public abstract class Vehiculo {
     void setDiasAlquiler(int diasAlquiler) {
         this.diasAlquiler = diasAlquiler;
     }
-    
-    int getPrecioBase(){
-        return Vehiculo.precioBase;
-    }
 
     // metodos
-    
     // calcula el coste de alquiler básico
-    public double alquilerBase(){
+    public double alquilerBase() {
         double costeBase;
         costeBase = diasAlquiler * precioBase;
         return costeBase;
     }
-    
+
     @Override
     public String toString() {
-        String cadena = "\nMatricula: " + Vehiculo.matricula;
+        String cadena = "\nMatricula: " + this.matricula;
         cadena += "\nDias de alquilerl: " + this.diasAlquiler;
-        cadena += "\n------------------------------------------\n\n";
+        cadena += "\n------------------------------------------\n";
 
         return cadena;
     }
