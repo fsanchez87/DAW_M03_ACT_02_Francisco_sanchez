@@ -12,7 +12,8 @@ package Actividad02;
 class Coche extends Vehiculo{
     
     // atributos
-    private static double suplementoAlquilerCoche = 1.5;
+    private static final String tipoVehiculo = "Coche";
+    private static final double suplementoAlquilerCoche = 1.5;
     protected int numeroPlazas;
 
     public Coche(String matricula, int diasAlquiler, int numeroPlazas) {
@@ -32,13 +33,13 @@ class Coche extends Vehiculo{
     //métodos
     public double costeAlquilerCoche(){
         double costeAlquilarcoche;
-        costeAlquilarcoche = alquilerBase()+ (getNumeroPlazas()*suplementoAlquilerCoche);
+        costeAlquilarcoche = alquilerBase() + (getNumeroPlazas()*suplementoAlquilerCoche);
         return costeAlquilarcoche;
         
     }
     @Override
     public String toString() {
-        String cadena = "\nMatricula: " + this.matricula;
+        String cadena = "\nMatricula: " + Coche.matricula;
         cadena += "\nDias de alquiler: " + this.diasAlquiler;
         cadena += "\nNúmero de plazas: " + this.numeroPlazas;
         cadena += "\nCoste del alquiler: " + costeAlquilerCoche() + "€";
