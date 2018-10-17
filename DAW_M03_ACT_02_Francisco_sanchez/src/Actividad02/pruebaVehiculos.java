@@ -41,7 +41,16 @@ public class pruebaVehiculos {
             }
 
             System.out.print("\nIntroduzca la matrícula del vehículo que quiere alquilar: ");
-            String opcion = sc.nextLine();
+            String codigoMatricula = sc.nextLine();
+            
+            int i = -1;
+            String codigo = " ";
+            do {
+                i++;
+                if (i < vehiculos.length){
+                    codigo = vehiculos[i].getMatricula();
+                }                       
+            } while (!(codigo.equals(codigoMatricula))&& (i < vehiculos.length));
             
         } while (true);
     }
