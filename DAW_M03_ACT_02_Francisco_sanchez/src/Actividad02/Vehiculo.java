@@ -18,17 +18,17 @@ public abstract class Vehiculo {
 
     //constructor
     public Vehiculo(String matricula, int diasAlquiler) {
-        this.matricula = matricula;
+        Vehiculo.matricula = matricula;
         this.diasAlquiler = diasAlquiler;
     }
 
     // getter y setter
     String getMatricula() {
-        return this.matricula;
+        return Vehiculo.matricula;
     }
 
     void setMatricula(String matricula) {
-        this.matricula = matricula;
+        Vehiculo.matricula = matricula;
     }
 
     int getDiasAlquiler() {
@@ -40,7 +40,7 @@ public abstract class Vehiculo {
     }
     
     int getPrecioBase(){
-        return this.precioBase;
+        return Vehiculo.precioBase;
     }
 
     // metodos
@@ -54,7 +54,7 @@ public abstract class Vehiculo {
     
     @Override
     public String toString() {
-        String cadena = "\nMatricula: " + this.matricula;
+        String cadena = "\nMatricula: " + Vehiculo.matricula;
         cadena += "\nDias de alquilerl: " + this.diasAlquiler;
         cadena += "\n------------------------------------------\n\n";
 
