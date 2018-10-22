@@ -26,17 +26,20 @@ public class pruebaVehiculos {
         System.out.println("\n\n A L Q U I L E R");
         System.out.println("====================");
         System.out.println("Listado de vehículos: ");
-
+        
+        // muestra la matrícula de cada vehículo
         for (int i = 0; i < vehiculos.length; i++) {
             String cadena = "\nMatrícula: " + vehiculos[i].getMatricula();
             cadena += "\n---------------------";
 
             System.out.println(cadena);
         }
-
+        
+        // pide la matricula 
         System.out.print("\nIntroduzca la matrícula del vehículo que quiere alquilar: ");
         String codigoMatricula = sc.nextLine();
-
+         
+        // comprueba que la matricula existe
         int i = -1;
         String codigo = " ";
 
@@ -48,10 +51,12 @@ public class pruebaVehiculos {
                 System.out.println("Mátricula no encontrada");
             }
         } while (!(codigo.equals(codigoMatricula)) && (i < vehiculos.length));
-
+        
+        // pide los dias de alquiler
         System.out.print("\nIntroduzca los días que quiere alquilar: ");
         int diasAlquiler = sc.nextInt();
-
+        
+        // muestra el coste del alquiler
         System.out.println("El coste de alquiler es: " + vehiculos[i].calcularPrecioAlquiler(diasAlquiler) + " €");
     }
 
